@@ -109,17 +109,10 @@ header{
     font-weight: 800;
 }
 
-.aboutContentMain{
-
-}
 .pdetails{
     margin: 10px 5px;
     font-family: "Roboto Condensed";
     color: #666;
-}
-
-.aboutContentSkills{
-
 }
 
 .h3skills{
@@ -127,11 +120,6 @@ header{
 }
 
 /* Second Column */
-
-.aboutContentSkills{
-
-}
-
 .skills{
     display: flex;
     flex-wrap: wrap;
@@ -199,6 +187,7 @@ header{
     margin-top: 0.7rem;
     color: #666;
 }
+
 .btnFruitShop{
     font-family: "Roboto Condensed";
     font-weight: 500;
@@ -292,10 +281,6 @@ header{
     text-align: center;
 }
 
-.contactup{
-
-}
-
 .h2Contact{
     font-size: 2.36rem;
 }
@@ -316,10 +301,6 @@ header{
     background-color: #ebebeb;
     display: flex;
     display: block;
-}
-
-.formContainer{
-
 }
 
 .input{
@@ -377,7 +358,7 @@ header{
 
 /* Responsive Design */
 
-@media only screen and (min-width: 600px) and (max-width: 900px){
+@media only screen and (min-width: 651px) and (max-width: 900px){
     .textPrimary{
         margin: 15px 100px;
     }
@@ -398,8 +379,8 @@ header{
        margin: 0 10px;
     }
 
-    .spanContact{
-        margin: 10px 10px;
+    .contactup{
+        margin: 1rem 2rem;
     }
 
     .contactForm{
@@ -418,10 +399,17 @@ header{
         display: inline;
         margin: 1rem 0.8rem;
     }
+
+    .nav-div{
+        margin: 0.6rem 2rem;
+    }
+
+    .nav-list{
+        margin: 0;
+    }
 }
 
-
-@media screen and (max-width: 650px){
+@media only screen and  (max-width: 650px){
     .abrir-menu,
     .cerrar-menu{
          display: block; 
@@ -488,10 +476,6 @@ header{
         grid-gap: 4rem;
     }
 
-    .projectFruteria{
-
-    }
-
     .img1{
       
         height: 8rem;
@@ -509,9 +493,17 @@ header{
          margin: 2rem 3rem;
          margin-bottom: 5rem;
      }
+
+     .nav-div{
+        margin: 1rem 2rem;
+    }
+
+    .abrir-menu{
+        margin-right: 1rem;
+    }
 }
 
-@media only screen and (min-width: 320px) and (max-width: 450px) {
+@media only screen and (min-width: 320px) and (max-width: 650px) {
     .home{
         margin: 1rem 0.8rem;
     }
@@ -550,5 +542,13 @@ header{
 
     .mainFooter{
         margin: 1rem;
+    }
+
+    .nav-div{
+        margin: 10px 1.2rem;
+    }
+
+    .abrir-menu{
+        margin-right: 1rem;
     }
 }

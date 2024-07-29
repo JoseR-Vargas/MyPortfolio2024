@@ -1,3 +1,5 @@
+//Responsive Button
+
 const nav = document.querySelector('#nav')
 const abrir = document.querySelector('#abrir')
 const cerrar = document.querySelector('#cerrar')
@@ -9,6 +11,8 @@ abrir.addEventListener("click", () =>{
 cerrar.addEventListener("click", () =>{
     nav.classList.remove('visible')
 })
+
+// Formulary
 
 let btnsent = document.getElementById("btnFormulary")
 btnsent.addEventListener("click", saveFormulary)
