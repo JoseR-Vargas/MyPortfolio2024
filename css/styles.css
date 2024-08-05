@@ -135,6 +135,11 @@ header{
     border: 1px solid #666;
     font-family: "Roboto Condensed";
     font-weight: 600;
+    transition: transform 1s;
+    cursor: none;
+}
+.skills_skills:hover{
+    transform: rotate(360deg)
 }
 
 /* Section Projects */
