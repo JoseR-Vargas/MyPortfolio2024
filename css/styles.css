@@ -162,6 +162,12 @@ header{
     color: #666;
 }
 
+/* Proyecto Javascript oculto */
+
+.projectFruteria1{
+    display: none;
+}
+
 .projectFruteria{
     display: grid;
     grid-template-columns: 1.25fr 1fr;
@@ -416,6 +422,12 @@ a{
     .nav-list{
         margin: 0;
     }
+
+    /* Proyecto Javascript oculto */
+
+.projectFruteria1{
+    display: none;
+}
 }
 
 @media only screen and  (max-width: 650px){
@@ -510,6 +522,12 @@ a{
     .abrir-menu{
         margin-right: 1rem;
     }
+
+    /* Proyecto Javascript oculto */
+
+.projectFruteria1{
+    display: none;
+}
 }
 
 @media only screen and (min-width: 320px) and (max-width: 650px) {
@@ -566,4 +584,10 @@ a{
     .abrir-menu{
         margin-right: 1rem;
     }
+
+    /* Proyecto Javascript oculto */
+
+.projectFruteria1{
+    display: none;
+}
 }
