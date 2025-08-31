@@ -10,9 +10,8 @@ class ApiConfig {
             // Development environment
             return 'http://localhost:3002/api';
         } else {
-            // Production environment - Replace with your actual deployed backend URL
-            return '/api'; // Assumes backend is served from the same domain
-            // return 'https://your-backend-domain.com/api'; // Or specify full URL
+            // Production environment - your deployed backend
+            return 'https://myportfolio-back-j9ji.onrender.com/api';
         }
     }
 }
