@@ -158,10 +158,23 @@ class FormManager {
         try {
             this.showMessage('Sending message...', 'info');
             
-            // Simulate API call delay
-            await this.simulateSubmission();
+            // Get dynamic API URL
+            const baseUrl = window.ApiConfig ? window.ApiConfig.getBaseUrl() : 'http://localhost:3002/api';
             
-            // Add message to dashboard storage
+            // Send to backend API
+            const response = await fetch(`${baseUrl}/contacts`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            });
+            
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            
+            const result = await response.json();
+            
+            // Also add to localStorage for dashboard integration (fallback)
             if (window.ContactFormIntegration) {
                 window.ContactFormIntegration.addMessage(data);
             }
@@ -169,13 +182,18 @@ class FormManager {
             this.showMessage('Message sent successfully!', 'success');
             this.form.reset();
         } catch (error) {
-            this.showMessage('Error sending message. Please try again.', 'error');
+            console.error('Error sending message:', error);
+            
+            // Fallback to localStorage if API fails
+            if (window.ContactFormIntegration) {
+                window.ContactFormIntegration.addMessage(data);
+                this.showMessage('Message saved locally. Please check your connection.', 'warning');
+            } else {
+                this.showMessage('Error sending message. Please try again.', 'error');
+            }
         }
     }
-    
-    simulateSubmission() {
-        return new Promise(resolve => setTimeout(resolve, 2000));
-    }
+
     
     showMessage(message, type) {
         let messageEl = DOMUtils.$('.form-message');

@@ -141,53 +141,8 @@ class StorageService {
     }
 }
 
-// ===== API SERVICE (Prepared for NestJS Backend) =====
-class ApiService {
-    static BASE_URL = '/api'; // Will be configured for NestJS backend
-    
-    // Ready for NestJS integration
-    static async getMessages() {
-        try {
-            // For now, use localStorage. Ready for API integration:
-            // const response = await fetch(`${this.BASE_URL}/contacts`);
-            // return await response.json();
-            return StorageService.getMessages();
-        } catch (error) {
-            console.error('Error fetching messages:', error);
-            return [];
-        }
-    }
-    
-    static async updateMessageStatus(id, status) {
-        try {
-            // Ready for API integration:
-            // const response = await fetch(`${this.BASE_URL}/contacts/${id}`, {
-            //     method: 'PATCH',
-            //     headers: { 'Content-Type': 'application/json' },
-            //     body: JSON.stringify({ status })
-            // });
-            // return await response.json();
-            return StorageService.updateMessage(id, { status });
-        } catch (error) {
-            console.error('Error updating message status:', error);
-            return null;
-        }
-    }
-    
-    static async deleteMessage(id) {
-        try {
-            // Ready for API integration:
-            // const response = await fetch(`${this.BASE_URL}/contacts/${id}`, {
-            //     method: 'DELETE'
-            // });
-            // return response.ok;
-            return StorageService.deleteMessage(id);
-        } catch (error) {
-            console.error('Error deleting message:', error);
-            return false;
-        }
-    }
-}
+// ===== API SERVICE (Using from api-config.js) =====
+// ApiService is loaded from api-config.js
 
 // ===== STATS MANAGER (Single Responsibility) =====
 class StatsManager {
@@ -276,9 +231,10 @@ class MessageFilter {
 // ===== MESSAGE RENDERER (Single Responsibility) =====
 class MessageRenderer {
     static renderMessage(message) {
+        const messageId = message._id || message.id; // MongoDB compatibility
         const messageEl = DOMUtils.create('div', {
             className: `message-item ${message.status}`,
-            'data-id': message.id,
+            'data-id': messageId,
             tabindex: '0'
         });
         
@@ -393,7 +349,8 @@ class ModalManager {
     async markAsRead() {
         if (!this.currentMessage || this.currentMessage.status !== 'unread') return;
         
-        const updated = await ApiService.updateMessageStatus(this.currentMessage.id, 'read');
+        const messageId = this.currentMessage._id || this.currentMessage.id;
+        const updated = await ApiService.updateMessageStatus(messageId, 'read');
         if (updated) {
             this.currentMessage.status = 'read';
             this.markReadBtn.disabled = true;
@@ -420,7 +377,8 @@ class ModalManager {
     async markAsReplied() {
         if (!this.currentMessage) return;
         
-        const updated = await ApiService.updateMessageStatus(this.currentMessage.id, 'replied');
+        const messageId = this.currentMessage._id || this.currentMessage.id;
+        const updated = await ApiService.updateMessageStatus(messageId, 'replied');
         if (updated) {
             this.currentMessage.status = 'replied';
             this.markReadBtn.disabled = true;
@@ -488,7 +446,7 @@ class DashboardManager {
             const messageItem = e.target.closest('.message-item');
             if (messageItem) {
                 const messageId = messageItem.dataset.id;
-                const message = this.messages.find(msg => msg.id === messageId);
+                const message = this.messages.find(msg => (msg._id || msg.id) === messageId);
                 if (message) {
                     this.modal.open(message);
                     this.markAsReadIfUnread(message);
@@ -563,12 +521,13 @@ class DashboardManager {
     
     async markAsReadIfUnread(message) {
         if (message.status === 'unread') {
-            await ApiService.updateMessageStatus(message.id, 'read');
+            const messageId = message._id || message.id;
+            await ApiService.updateMessageStatus(messageId, 'read');
             message.status = 'read';
             this.statsManager.updateStatsDisplay();
             
             // Update the message item in the list
-            const messageItem = DOMUtils.$(`[data-id="${message.id}"]`);
+            const messageItem = DOMUtils.$(`[data-id="${messageId}"]`);
             if (messageItem) {
                 DOMUtils.removeClass(messageItem, 'unread');
                 DOMUtils.addClass(messageItem, 'read');
@@ -585,7 +544,8 @@ class DashboardManager {
         const unreadMessages = this.messages.filter(msg => msg.status === 'unread');
         
         for (const message of unreadMessages) {
-            await ApiService.updateMessageStatus(message.id, 'read');
+            const messageId = message._id || message.id;
+            await ApiService.updateMessageStatus(messageId, 'read');
         }
         
         await this.loadMessages();
@@ -622,22 +582,42 @@ class ContactFormIntegration {
         });
     }
     
-    // Function to be called from index.html contact form
-    static addMessage(formData) {
-        const messageData = {
-            name: formData.name,
-            email: formData.email,
-            message: formData.message
-        };
-        
-        const newMessage = StorageService.addMessage(messageData);
-        
-        // Notify dashboard if it's open in another tab
-        window.dispatchEvent(new CustomEvent('newContactMessage', {
-            detail: messageData
-        }));
-        
-        return newMessage;
+    // Function to be called from index.html contact form (fallback)
+    static async addMessage(formData) {
+        try {
+            // Try API first
+            const messageData = {
+                name: formData.name,
+                email: formData.email,
+                phone: formData.phone || '',
+                message: formData.message
+            };
+            
+            const newMessage = await ApiService.createMessage(messageData);
+            
+            // Notify dashboard if it's open in another tab
+            window.dispatchEvent(new CustomEvent('newContactMessage', {
+                detail: messageData
+            }));
+            
+            return newMessage;
+        } catch (error) {
+            console.error('Error in ContactFormIntegration:', error);
+            // Fallback to localStorage
+            const messageData = {
+                name: formData.name,
+                email: formData.email,
+                message: formData.message
+            };
+            
+            const newMessage = StorageService.addMessage(messageData);
+            
+            window.dispatchEvent(new CustomEvent('newContactMessage', {
+                detail: messageData
+            }));
+            
+            return newMessage;
+        }
     }
 }
 
