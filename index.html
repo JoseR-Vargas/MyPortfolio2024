@@ -2,238 +2,233 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=sc, initial-scale=1.0">
-    <title> Jose Vargas | Portfolio </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jose Vargas | Full Stack Developer</title>
 
-        <!-- font -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Bodoni+Moda+SC:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Wittgenstein:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <!-- Fonts optimizadas -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
-        <!-- Roboto -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Bodoni+Moda+SC:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Wittgenstein:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
-
-    <!-- Bootstrap -->
+    <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
-    <!-- Estilos css -->
+    <!-- CSS -->
     <link rel="stylesheet" href="css/styles.css">
-
-
 </head>
 <body>
-
-    <header>
-            <div class="nav-div">
-                <img class="logo" src="./img/Foto_jr-removebg-preview.png" alt="logo">
-                <span class="span">Jose Vargas</span>
-                    </div>
-                    
-                <button id="abrir" class="abrir-menu"><i class="bi bi-list"></i></button>
-                <nav class="nav" id="nav">
-                    <button class="cerrar-menu" id="cerrar"><i class="bi bi-x-circle"></i></button>
-                    <ul class="nav-list">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="#About">About</a></li>
-                        <li><a href="#Projetcs">Projects</a></li>
-                        <li><a href="#Contact">Contact</a></li>
-        
-                    </ul>
-                </nav>
+    <!-- Header con navegación responsive -->
+    <header class="header">
+        <div class="header__container">
+            <div class="header__brand">
+                <img class="header__logo" src="./img/Foto_jr-removebg-preview.png" alt="Jose Vargas">
+                <span class="header__name">Jose Vargas</span>
+            </div>
+            
+            <button class="header__toggle" id="nav-toggle" aria-label="Toggle navigation">
+                <i class="bi bi-list"></i>
+            </button>
+            
+            <nav class="nav" id="nav-menu">
+                <button class="nav__close" id="nav-close" aria-label="Close navigation">
+                    <i class="bi bi-x-lg"></i>
+                </button>
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="#home" class="nav__link">Home</a></li>
+                    <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
+                    <li class="nav__item"><a href="#projects" class="nav__link">Projects</a></li>
+                    <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <!-- Section main -->
-
-    <section  class="homecontainer">
-        <h1 class="home">HEY, I'M JOSE VARGAS</h1>
-        <p class="textPrimary">A Result-Oriented Web Developer building and managing Websites and Web Applications that leads to the success of the overall product</p>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero__container">
+            <div class="hero__content">
+                <h1 class="hero__title">
+                    <span class="hero__greeting">Hey, I'm</span>
+                    <span class="hero__name">Jose Vargas</span>
+                </h1>
+                <p class="hero__subtitle">Full Stack Developer</p>
+                <p class="hero__description">
+                    Building modern web applications with cutting-edge technologies that drive business success
+                </p>
+                <div class="hero__cta">
+                    <a href="#projects" class="btn btn--primary">View Projects</a>
+                    <a href="#contact" class="btn btn--secondary">Contact Me</a>
+                </div>
+            </div>
+            <div class="hero__scroll">
+                <a href="#about" class="hero__scroll-link">
+                    <i class="bi bi-mouse"></i>
+                    <span>Scroll down</span>
+                </a>
+            </div>
+        </div>
     </section>
 
-    <div id="About" class="about">
-        <span class="spanAbout">ABOUT ME</span>
-        <span class="spanAbout1">Here you will find more information about me, what I do, and my current skills mostly in terms <br> of programming and technology</span>
-
-        <div class="aboutContent">
-
-            <!-- firstColumn -->
-
-            <div class="aboutContentMain">
-                <h3 class="h3about"> Get to know me</h3>
-
-                <div class="aboutContentDetails">  
-                    <p class="pdetails">I'm a Full Stack Developer building and managing the Front-end of Websites and Web Applications that leads to the success of the overall product. Check out some of my work in the Projects section.</p>
-                    <p class="pdetails">I also like sharing content related to the stuff that I have learned over the years in Web Development so it can help other people of the Dev Community. Feel free to Connect or Follow me on my Linkedin and Instagram where I post useful content related to Web Development and Programming</p>
-                    <p class="pdetails">I'm open to Job opportunities where I can contribute, learn and grow. If you have a good opportunity that matches my skills and experience then don't hesitate to contact me.</p>
-                </div>
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section__header">
+                <h2 class="section__title">About Me</h2>
+                <p class="section__subtitle">
+                    Discover more about my journey, expertise, and the technologies I work with
+                </p>
             </div>
 
-            <!-- secondColumn -->
-
-            <div class="aboutContentSkills">
-
-                <h3 class="h3skills">My Skills</h3>
-
-                <div class="skills">
-                    <div class="skills_skills">HTML</div>
-                    <div class="skills_skills">CSS</div>
-                    <div class="skills_skills">JavaScript</div>
-                    <div class="skills_skills">React</div>
-                    <div class="skills_skills">SASS</div>
-                    <div class="skills_skills">GIT</div>
-                    <div class="skills_skills">Github</div>
-                    <div class="skills_skills">Responsive Design</div>
-                    <div class="skills_skills">SEO</div>
-                    <div class="skills_skills">Node Js</div>
-                    <div class="skills_skills">Express</div>
-                    <div class="skills_skills">MongoDB</div>
-                    <div class="skills_skills">Docker</div>
-                    <div class="skills_skills">Typescript</div>
+            <div class="about__content">
+                <div class="about__info">
+                    <h3 class="about__info-title">Get to know me</h3>
+                    <div class="about__text">
+                        <p>I'm a passionate Full Stack Developer specializing in modern web technologies. I build scalable applications using React, Node.js, and cutting-edge frameworks like Nest.js.</p>
+                        <p>I love sharing knowledge and contributing to the developer community through social platforms, helping others grow in their coding journey.</p>
+                        <p>I'm always open to new opportunities where I can contribute, learn, and make a meaningful impact. Let's build something amazing together!</p>
+                    </div>
                 </div>
 
-
-            </div>
-        </div>
-    </div>
-
-    <div id="Projetcs"  class="projectsMain">
-
-        <div class="projectsContainer">
-            <h2 class="h2projects">PROJECTS</h2>
-            <span class="spanprojects">Here you will find some of the personal and clients projects  that I created with <br>each project containing its own case study</span>
-        </div>
-
-        <!-- Javascript Ecommerce -->
-
-        <div class="projectFruteria1">
-           
-            <div class="projectimg">
-                <img class="img1" src="img/img-main-1.png" alt="projectFruteria">
-            </div>
-      
-            <div class="projectfruteriacontainer">
-                <span class="projectFcontainer">Working Progress- JavaScript</span>
-                <p class="projectDescription">
-                    I created an online fruit store using HTML, CSS and JavaScript. <br> The project includes a friendly user interface, an interactive <br> shopping cart to improve user experience.</p>
-                    <a href="https://joser-vargas.github.io/ProyectoFinal-JavaScript-CoderHouse/" target="_blank"><button class="btnFruitShop">Go to Fruit Shop </button></a>
-                    <a href="https://github.com/JoseR-Vargas/ProyectoFinal-JavaScript-CoderHouse" target="_blank"><button class="btnFruitShop">Go to Github 💻 </button></a>
-            </div>
-        </div>
-
-         <!-- Proyecto de React E-commerce -->
-
-        <div class="projectFruteria">
-            <!-- colum 1  -->
-            <div class="projectimg">
-                <img class="img1" src="https://res.cloudinary.com/dyg0knk2o/image/upload/v1722749191/Untitled_design-removebg-preview_tszroh.png" alt="projectFruteria">
-            </div>
-            <!-- column 2  -->
-            <div class="projectfruteriacontainer">
-                <span class="projectFcontainer">Working Progress - React Js</span>
-                <p class="projectDescription">
-                    I created an online fruit store using React Js. <br> The project includes a friendly user interface, an interactive <br> shopping cart to improve user experience.</p>
-                    <a href="https://proyecto-react-green.vercel.app/" target="_blank"><button class="btnFruitShop">Go to Fruit Shop </button></a>
-                    <a href="https://github.com/JoseR-Vargas/ProyectoReact" target="_blank"><button class="btnFruitShop">Go to Github 💻 </button></a>
-            </div>
-        </div>
-
-
-        <!-- Avila Grill Proyect -->
-
-
-        <div class="projectFruteria">
-            <div class="projectimg">
-                <img class="img1" src="./img/AvilaGrillProyect.png" alt="AvilaGrillFoodTruck">
-            </div>
-    
-            <div class="projectfruteriacontainer">
-                <span class="projectFcontainer">Avila Grill Food Truck</span>
-                <p class="projectDescription">
-                    I designed and developed a modern, user-friendly website for Avila Grill Miami, a food truck specializing in delicious grill cuisine. The site provides an engaging digital platform where customers can explore the menu, check the truck's location, and stay updated on operating hours. With a clean and intuitive design, the website ensures a seamless browsing experience, making it easy for users to access essential business information.</p>
-                    <a href="https://avilagrillmiami.com/" target="_blank"><button class="btnFruitShop">Go to Avila Grill Miami </button></a>
-                    
-            </div>
-        </div>
-    </div>
-
-    <!-- contact -->
-
-    <div id="Contact" class="contactMain">
-
-        <div class="contactup"> 
-        <h2 class="h2Contact">CONTACT</h2>
-            <span class="spanContact">Feel free to Contact me by submitting the form below and I will get back to you as soon as possible</span>
-        </div>
-    </div>
-
-    <form class="contactForm" id="contactForm">
-
-        <div class="formContainer">
-
-            <div class="inputContact">
-
-                <label class="label" for="name">Name</label>
-
-                <input class="input" type="text" name="name" id="name" placeholder="Enter Your Name">
-    
-            </div>
-        
-            <div class="inputContact">
-
-                <label class="label" for="email">Email</label>
-
-                <input class="input" type="text" name="email" id="email" placeholder="Enter Your Email">
-    
-            </div>
-    
-            <div class="textarea">
-
-                <label class="label" for="message">Message</label>
-
-                <textarea name="" id="message" class="inputContactText" placeholder="Enter Your Message"></textarea>
-    
-            </div>
-        </div>
-
-         <div class="btndiv">
-            <button id="btnFormulary" class="btnSubmit" type="submit">Submit</button>
-         </div>
-       
-
-    </form>
-
-    <!-- Section Footer -->
-
-    <footer class="footer">
-        <div class="mainFooter">
-            <div class="creator">
-                <h2 class="h2footer">JOSE VARGAS</h2>
-                <p class="parrafofooter">A Frontend focused Web Developer building the Frontend of <br> Websites and Web Applications that leads to the  success of the overall product</p>
-            </div>
-
-            <div class="social">
-                <h2 class="spanfooter">SOCIAL</h2>
-                <div class="socialcontent">
-                    <a href="https://github.com/JoseR-Vargas" target="_blank"><img class="logosocial" src="img/logo-github.png" alt=""></a>
-                    <a href="https://www.linkedin.com/in/jose-vargas-development-full-stack2025/" target="_blank"><img class="logosocial" src="img/logo-linkedin.png" alt=""></a>
-                    <a href="https://www.tiktok.com/@developer.uy?_t=8nwX2kRuesY&_r=1" target="_blank"><img class="logosocial" src="img/logo-tiktok.png" alt=""></a>
-                    <a href="https://www.instagram.com/developer_uy?igsh=NDJ5eXd1bHprcjZr" target="_blank"><img class="logosocial" src="img/logo-instagram.png" alt=""></a>
+                <div class="about__skills">
+                    <h3 class="about__skills-title">Tech Stack</h3>
+                    <div class="skills__grid">
+                        <div class="skill__item">HTML5</div>
+                        <div class="skill__item">CSS3</div>
+                        <div class="skill__item">JavaScript</div>
+                        <div class="skill__item">TypeScript</div>
+                        <div class="skill__item">React</div>
+                        <div class="skill__item">Node.js</div>
+                        <div class="skill__item">Nest.js</div>
+                        <div class="skill__item">Express</div>
+                        <div class="skill__item">MongoDB</div>
+                        <div class="skill__item">SQL</div>
+                        <div class="skill__item">Docker</div>
+                        <div class="skill__item">Git</div>
+                        <div class="skill__item">SASS</div>
+                        <div class="skill__item">Responsive Design</div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="mainFooterLower">
-            <p class="pFooterLower">
-                Copyright 2024. Made by Jose Vargas
-            </p>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <div class="section__header">
+                <h2 class="section__title">Projects</h2>
+                <p class="section__subtitle">
+                    Explore my latest work and technical implementations
+                </p>
+            </div>
+
+            <div class="projects__grid">
+                <!-- Project 1 -->
+                <article class="project__card">
+                    <div class="project__image">
+                        <img src="img/img-main-1.png" alt="JavaScript E-commerce" loading="lazy">
+                        <div class="project__overlay">
+                            <div class="project__links">
+                                <a href="https://joser-vargas.github.io/ProyectoFinal-JavaScript-CoderHouse/" target="_blank" class="project__link">
+                                    <i class="bi bi-eye"></i>
+                                </a>
+                                <a href="https://github.com/JoseR-Vargas/ProyectoFinal-JavaScript-CoderHouse" target="_blank" class="project__link">
+                                    <i class="bi bi-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project__content">
+                        <h3 class="project__title">JavaScript E-commerce</h3>
+                        <p class="project__description">Interactive fruit store built with vanilla JavaScript featuring dynamic cart functionality and responsive design.</p>
+                        <div class="project__tech">
+                            <span class="tech__tag">JavaScript</span>
+                            <span class="tech__tag">HTML5</span>
+                            <span class="tech__tag">CSS3</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 2 -->
+                <article class="project__card">
+                    <div class="project__image">
+                        <img src="https://res.cloudinary.com/dyg0knk2o/image/upload/v1722749191/Untitled_design-removebg-preview_tszroh.png" alt="React E-commerce" loading="lazy">
+                        <div class="project__overlay">
+                            <div class="project__links">
+                                <a href="https://proyecto-react-green.vercel.app/" target="_blank" class="project__link">
+                                    <i class="bi bi-eye"></i>
+                                </a>
+                                <a href="https://github.com/JoseR-Vargas/ProyectoReact" target="_blank" class="project__link">
+                                    <i class="bi bi-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project__content">
+                        <h3 class="project__title">React E-commerce</h3>
+                        <p class="project__description">Modern fruit store built with React.js featuring component-based architecture and enhanced user experience.</p>
+                        <div class="project__tech">
+                            <span class="tech__tag">React</span>
+                            <span class="tech__tag">JavaScript</span>
+                            <span class="tech__tag">CSS3</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 3 -->
+                <article class="project__card">
+                    <div class="project__image">
+                        <img src="./img/AvilaGrillProyect.png" alt="Avila Grill Website" loading="lazy">
+                        <div class="project__overlay">
+                            <div class="project__links">
+                                <a href="https://avilagrillmiami.com/" target="_blank" class="project__link">
+                                    <i class="bi bi-eye"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project__content">
+                        <h3 class="project__title">Avila Grill Miami</h3>
+                        <p class="project__description">Professional website for a Miami food truck featuring modern design, location tracking, and menu showcase.</p>
+                        <div class="project__tech">
+                            <span class="tech__tag">HTML5</span>
+                            <span class="tech__tag">CSS3</span>
+                            <span class="tech__tag">JavaScript</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
         </div>
-        <div>
-        </div>
-    </footer>
+    </section>
 
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section__header">
+                <h2 class="section__title">Get In Touch</h2>
+                <p class="section__subtitle">
+                    Ready to bring your ideas to life? Let's start a conversation
+                </p>
+            </div>
 
-<section id="carritoContainer"></section>
-
-<script src="js/main.js"></script>
-</body>
-</html>
+            <form class="contact__form" id="contactForm">
+                <div class="form__group">
+                    <label for="name" class="form__label">Name</label>
+                    <input type="text" id="name" name="name" class="form__input" placeholder="Your name" required>
+                </div>
+                
+                <div class="form__group">
+                    <label for="email" class="form__label">Email</label>
+                    <input type="email" id="email" name="email" class="form__input" placeholder="your.email@example.com" required>
+                </div>
+                
+                <div class="form__group">
+                    <label for="message" class="form__label">Message</label>
+                    <textarea id="message" name="message" class="form__textarea" placeholder="Tell me about your project..." required></textarea>
+                </div>
+                
+                <button type="submit" class="btn btn--primary btn--full">
+                    <span>Send Message</span>
+                    <i class="bi bi-send"></i>
+                </button>
+            </form
