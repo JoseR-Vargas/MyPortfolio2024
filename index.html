@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jose Vargas | Portfolio</title>
-    
+    <title>Jose Vargas | Full Stack Developer</title>
+
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="img/icon.png">
 
@@ -20,20 +20,21 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+
     <!-- Header -->
     <header class="header">
         <div class="header__container">
             <div class="header__brand">
-                <img class="header__logo" src="./img/Foto_jr.jpeg" alt="Jose Vargas Logo">
+                <img class="header__logo" src="./img/Foto_jr.jpeg" alt="Jose Vargas">
                 <span class="header__name">Jose Vargas</span>
             </div>
-            
-            <button id="abrir" class="header__toggle">
+
+            <button id="abrir" class="header__toggle" aria-label="Open menu">
                 <i class="bi bi-list"></i>
             </button>
-            
-            <nav class="nav" id="nav">
-                <button class="nav__close" id="cerrar">
+
+            <nav class="nav" id="nav" aria-label="Main navigation">
+                <button class="nav__close" id="cerrar" aria-label="Close menu">
                     <i class="bi bi-x"></i>
                 </button>
                 <ul class="nav__list">
@@ -54,34 +55,74 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- ===== HERO SECTION ===== -->
     <section id="home" class="hero">
+
+        <!-- Animated aurora background -->
+        <div class="hero__bg" aria-hidden="true">
+            <div class="hero__orb hero__orb--1"></div>
+            <div class="hero__orb hero__orb--2"></div>
+            <div class="hero__orb hero__orb--3"></div>
+        </div>
+
         <div class="hero__container">
+
+            <!-- Content -->
             <div class="hero__content">
-                <span class="hero__greeting">Hey, I'm</span>
+
+                <!-- Available badge -->
+                <!-- <div class="hero__badge-wrapper">
+                    <span class="hero__status-dot" aria-hidden="true"></span>
+                    <span class="hero__badge-text">Available for hire</span>
+                </div> -->
+
+                <span class="hero__greeting">// Hey, I'm</span>
                 <h1 class="hero__name">Jose Vargas</h1>
-                <p class="hero__subtitle">Full Stack Developer</p>
-                <p class="hero__description">
-                    A Result-Oriented Web Developer building and managing Websites and Web Applications that leads to the success of the overall product
+
+                <!-- Typewriter subtitle -->
+                <p class="hero__subtitle">
+                    <span id="typed-text"></span><span class="hero__cursor" aria-hidden="true">|</span>
                 </p>
+
+                <p class="hero__description">
+                    Backend Developer focused on building scalable services with <strong>Node.js</strong>, <strong>TypeScript</strong> and <strong>hexagonal architecture</strong> backed by SQL databases.
+                </p>
+
                 <div class="hero__cta">
-                    <a href="#projects" class="btn btn--primary">View My Work</a>
-                    <a href="#contact" class="btn btn--secondary">Get In Touch</a>
+                    <a href="#projects" class="btn btn--primary">
+                        <i class="bi bi-grid-3x3-gap"></i>
+                        View My Work
+                    </a>
+                    <a href="#contact" class="btn btn--secondary">
+                        <i class="bi bi-send"></i>
+                        Get In Touch
+                    </a>
                 </div>
             </div>
+
+            <!-- Photo (visible on desktop) -->
+            <div class="hero__visual" aria-hidden="true">
+                <div class="hero__image-wrapper">
+                    <img src="./img/Foto_jr-removebg-preview.png" alt="Jose Vargas" class="hero__photo">
+                </div>
+            </div>
+
         </div>
+
+        <!-- Scroll indicator -->
         <div class="hero__scroll">
-            <a href="#about" class="hero__scroll-link">
-                <span>Scroll Down</span>
-                <i class="bi bi-arrow-down"></i>
+            <a href="#about" class="hero__scroll-link" aria-label="Scroll to About section">
+                <span>Scroll</span>
+                <i class="bi bi-chevron-down"></i>
             </a>
         </div>
     </section>
 
-    <!-- About Section -->
+    <!-- ===== ABOUT SECTION ===== -->
     <section id="about" class="about">
         <div class="container">
             <div class="section__header">
+                <span class="section__tag">Who I am</span>
                 <h2 class="section__title">About Me</h2>
                 <p class="section__subtitle">
                     Here you will find more information about me, what I do, and my current skills mostly in terms of programming and technology
@@ -89,18 +130,18 @@
             </div>
 
             <div class="about__content">
-                <!-- About Info -->
+                <!-- Bio -->
                 <div class="about__info">
                     <h3 class="about__info-title">Get to know me!</h3>
                     <div class="about__text">
                         <p>
-                            I'm a <strong>Full Stack Developer</strong> building and managing the Front-end of Websites and Web Applications that leads to the success of the overall product. Check out some of my work in the <strong>Projects</strong> section.
+                            I'm a <strong>Backend Developer</strong> focused on designing and building robust server-side systems, REST APIs and business applications. I work primarily with <strong>NestJS</strong>, <strong>Node.js</strong> and <strong>TypeScript</strong>, with a strong emphasis on clean architecture, maintainability and long-term scalability. Check out my work in the <strong>Projects</strong> section.
                         </p>
                         <p>
-                            I also like sharing content related to the stuff that I have learned over the years in <strong>Web Development</strong> so it can help other people of the Dev Community. Feel free to Connect or Follow me on my <strong>LinkedIn</strong> and <strong>Instagram</strong> where I post useful content related to Web Development and Programming.
+                            My backend experience includes migrating a legacy <strong>PHP</strong> application to <strong>Node.js</strong> and <strong>TypeScript</strong> with <strong>hexagonal architecture</strong> and <strong>Oracle Database 10</strong> for a power utility platform in Mendoza, Argentina. I also built a vacation management portal for a mining company in Peru and a product bidding portal, both backed by <strong>PostgreSQL</strong> and designed around clear domain boundaries for maintainable growth.
                         </p>
                         <p>
-                            I'm open to <strong>Job</strong> opportunities where I can contribute, learn and grow. If you have a good opportunity that matches my skills and experience then don't hesitate to <strong>contact</strong> me.
+                            I'm actively looking for <strong>Backend</strong> or <strong>Node.js</strong> roles where I can contribute to meaningful products, grow technically and work with a team that values good engineering. Don't hesitate to <strong>reach out</strong> if that sounds like a fit.
                         </p>
                     </div>
                 </div>
@@ -109,45 +150,84 @@
                 <div class="about__skills">
                     <h3 class="about__skills-title">My Skills</h3>
                     <div class="skills__grid">
-                        <div class="skill__item">NestJS</div>
-                        <div class="skill__item">SQL</div>
-                        <div class="skill__item">JavaScript</div>
-                        <div class="skill__item">React</div>
-                        <div class="skill__item">Git</div>
-                        <div class="skill__item">GitHub</div>
-                        <div class="skill__item">SEO</div>
-                        <div class="skill__item">Node.js</div>
-                        <div class="skill__item">Express</div>
-                        <div class="skill__item">MongoDB</div>
-                        <div class="skill__item">Docker</div>
-                        <div class="skill__item">TypeScript</div>
+                        <div class="skill__item">
+                            <i class="bi bi-server skill__icon"></i>
+                            <span>NestJS</span>
+                        </div>
+                        <div class="skill__item">
+                            <i class="bi bi-diagram-3 skill__icon"></i>
+                            <span>Node.js</span>
+                        </div>
+                        <div class="skill__item">
+                            <i class="bi bi-lightning-charge skill__icon"></i>
+                            <span>Express</span>
+                        </div>
+                        <div class="skill__item">
+                            <i class="bi bi-code-slash skill__icon"></i>
+                            <span>TypeScript</span>
+                        </div>
+                        <!-- <div class="skill__item">
+                            <i class="bi bi-layers skill__icon"></i>
+                            <span>MongoDB</span>
+                        </div> -->
+                        <div class="skill__item">
+                            <i class="bi bi-database skill__icon"></i>
+                            <span>SQL</span>
+                        </div>
+                        <div class="skill__item">
+                            <i class="bi bi-box skill__icon"></i>
+                            <span>Docker</span>
+                        </div>
+                        <div class="skill__item">
+                            <i class="bi bi-braces skill__icon"></i>
+                            <span>JavaScript</span>
+                        </div>
+                        <!-- <div class="skill__item">
+                            <i class="bi bi-arrow-repeat skill__icon"></i>
+                            <span>React</span>
+                        </div> -->
+                        <div class="skill__item">
+                            <i class="bi bi-rocket-takeoff skill__icon"></i>
+                            <span>Fastify</span>
+                        </div>
+                        <div class="skill__item">
+                            <i class="bi bi-git skill__icon"></i>
+                            <span>Git</span>
+                        </div>
+                        <div class="skill__item">
+                            <i class="bi bi-github skill__icon"></i>
+                            <span>GitHub</span>
+                        </div>
+                        <div class="skill__item">
+                            <i class="bi bi-search skill__icon"></i>
+                            <span>SEO</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
+    <!-- ===== PROJECTS SECTION ===== -->
     <section id="projects" class="projects">
         <div class="container">
             <div class="section__header">
+                <span class="section__tag">My work</span>
                 <h2 class="section__title">Projects</h2>
                 <p class="section__subtitle">
-                    Here you will find some of the personal and clients projects that I created with each project containing its own case study
+                    Here you will find some of the personal and client projects that I created with each project containing its own case study
                 </p>
             </div>
 
             <div class="projects__grid">
-                <!-- TecniServi Project -->
+
+                <!-- TecniServi -->
                 <article class="project__card">
                     <div class="project__image">
                         <img src="https://tecni-servi.com/img/logo%20tecni.png" alt="TecniServi - Servicio Técnico Especializado">
                         <div class="project__overlay">
                             <div class="project__links">
-                                <a href="https://tecni-servi.com/" 
-                                   target="_blank" 
-                                   class="project__link" 
-                                   title="Live Demo">
+                                <a href="https://tecni-servi.com/" target="_blank" class="project__link" title="Live Demo">
                                     <i class="bi bi-eye"></i>
                                 </a>
                             </div>
@@ -156,58 +236,50 @@
                     <div class="project__content">
                         <h3 class="project__title">TecniServi</h3>
                         <p class="project__description">
-                            I developed a comprehensive website for TecniServi, a technical service company specializing in electronic device repairs. The site features service listings, contact forms, location maps, and integrated social media for seamless customer communication.
+                            Comprehensive website for a technical service company specializing in electronic device repairs. Features service listings, contact forms, location maps, and social media integration.
                         </p>
                         <div class="project__tech">
                             <span class="tech__tag">HTML</span>
                             <span class="tech__tag">CSS</span>
                             <span class="tech__tag">JavaScript</span>
-                            <span class="tech__tag">Responsive Design</span>
                             <span class="tech__tag">Google Maps API</span>
                         </div>
                     </div>
                 </article>
 
-                <!-- Booking App Project -->
+                <!-- Booking App -->
                 <article class="project__card">
                     <div class="project__image">
-                        <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Booking App - Barbería Premium">
+                        <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Booking App - Barbería Premium">
                         <div class="project__overlay">
                             <div class="project__links">
-                                <a href="https://booking-app-d3v.netlify.app/" 
-                                   target="_blank" 
-                                   class="project__link" 
-                                   title="Live Demo">
+                                <a href="https://booking-app-d3v.netlify.app/" target="_blank" class="project__link" title="Live Demo">
                                     <i class="bi bi-eye"></i>
                                 </a>
                             </div>
                         </div>
                     </div>
                     <div class="project__content">
-                        <h3 class="project__title">Booking App - Barbería Premium</h3>
+                        <h3 class="project__title">Booking App — Barbería</h3>
                         <p class="project__description">
-                            I developed a comprehensive booking application for a professional barbershop. The app features service listings, appointment scheduling, barber selection, pricing information, and contact integration for seamless customer experience.
+                            Comprehensive booking application for a professional barbershop. Features service listings, appointment scheduling, barber selection, and pricing information.
                         </p>
                         <div class="project__tech">
                             <span class="tech__tag">React</span>
                             <span class="tech__tag">JavaScript</span>
                             <span class="tech__tag">CSS</span>
-                            <span class="tech__tag">Responsive Design</span>
                             <span class="tech__tag">Netlify</span>
                         </div>
                     </div>
                 </article>
 
-                <!-- Avila Grill Miami Project -->
+                <!-- Avila Grill Miami -->
                 <article class="project__card">
                     <div class="project__image">
                         <img src="https://avilagrillmiami.com/img/FoodTruckAvilaGrill.JPG" alt="Avila Grill Miami - The Authentic Grill Experience">
                         <div class="project__overlay">
                             <div class="project__links">
-                                <a href="https://avilagrillmiami.com/" 
-                                   target="_blank" 
-                                   class="project__link" 
-                                   title="Live Demo">
+                                <a href="https://avilagrillmiami.com/" target="_blank" class="project__link" title="Live Demo">
                                     <i class="bi bi-eye"></i>
                                 </a>
                             </div>
@@ -216,29 +288,24 @@
                     <div class="project__content">
                         <h3 class="project__title">Avila Grill Miami</h3>
                         <p class="project__description">
-                            I designed and developed a comprehensive website for Avila Grill Miami, an authentic food truck experience. The site features an interactive menu system, location mapping, promotional offers, business hours, and integrated social media for customer engagement and online ordering.
+                            Full website for an authentic food truck experience. Features an interactive menu system, location mapping, business hours, and social media integration for online engagement.
                         </p>
                         <div class="project__tech">
                             <span class="tech__tag">HTML</span>
                             <span class="tech__tag">CSS</span>
                             <span class="tech__tag">JavaScript</span>
-                            <span class="tech__tag">Responsive Design</span>
                             <span class="tech__tag">Google Maps</span>
-                            <span class="tech__tag">Social Media Integration</span>
                         </div>
                     </div>
                 </article>
 
-                <!-- LisCake Project -->
+                <!-- LisCake -->
                 <article class="project__card">
                     <div class="project__image">
                         <img src="https://liscake.netlify.app/img/cake.jpg" alt="LisCake - Budines y Bizcochos Artesanales">
                         <div class="project__overlay">
                             <div class="project__links">
-                                <a href="https://liscake.netlify.app/" 
-                                   target="_blank" 
-                                   class="project__link" 
-                                   title="Live Demo">
+                                <a href="https://liscake.netlify.app/" target="_blank" class="project__link" title="Live Demo">
                                     <i class="bi bi-eye"></i>
                                 </a>
                             </div>
@@ -247,83 +314,125 @@
                     <div class="project__content">
                         <h3 class="project__title">LisCake</h3>
                         <p class="project__description">
-                            I created a modern, responsive website for LisCake, a local bakery specializing in artisanal cakes and muffins. The site features an intuitive ordering system, customer testimonials, and seamless WhatsApp integration for easy communication and orders.
+                            Modern, responsive website for a local bakery specializing in artisanal cakes and muffins. Features an ordering system, customer testimonials, and WhatsApp integration.
                         </p>
                         <div class="project__tech">
                             <span class="tech__tag">HTML</span>
                             <span class="tech__tag">CSS</span>
                             <span class="tech__tag">JavaScript</span>
-                            <span class="tech__tag">Responsive Design</span>
                             <span class="tech__tag">WhatsApp API</span>
                         </div>
                     </div>
                 </article>
+
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- ===== CONTACT SECTION ===== -->
     <section id="contact" class="contact">
         <div class="container">
             <div class="section__header">
+                <span class="section__tag">Get in touch</span>
                 <h2 class="section__title">Contact</h2>
                 <p class="section__subtitle">
-                    Feel free to Contact me by submitting the form below and I will get back to you as soon as possible
+                    Feel free to reach out by submitting the form below and I will get back to you as soon as possible
                 </p>
             </div>
 
-            <form class="contact__form" id="contactForm">
-                <div class="form__group">
-                    <label class="form__label" for="name">Name</label>
-                    <input class="form__input" type="text" name="name" id="name" placeholder="Enter Your Name" required>
+            <div class="contact__wrapper">
+
+                <!-- Contact Info -->
+                <div class="contact__info">
+                    <h3 class="contact__info-title">
+                        Let's build something <span class="text-gradient">amazing</span>
+                    </h3>
+                    <p class="contact__info-text">
+                        I'm always open to discussing new projects, creative ideas or opportunities to be part of your vision. Don't hesitate to reach out.
+                    </p>
+                    <div class="contact__details">
+                        <div class="contact__detail-item">
+                            <div class="contact__detail-icon">
+                                <i class="bi bi-geo-alt"></i>
+                            </div>
+                            <div class="contact__detail-body">
+                                <span class="contact__detail-label">Location</span>
+                                <span class="contact__detail-value">Uruguay, South America</span>
+                            </div>
+                        </div>
+                        <div class="contact__detail-item">
+                            <div class="contact__detail-icon">
+                                <i class="bi bi-clock"></i>
+                            </div>
+                            <div class="contact__detail-body">
+                                <span class="contact__detail-label">Availability</span>
+                                <span class="contact__detail-value">Mon – Fri, 9am – 6pm UYT</span>
+                            </div>
+                        </div>
+                        <div class="contact__detail-item">
+                            <div class="contact__detail-icon">
+                                <i class="bi bi-reply-all"></i>
+                            </div>
+                            <div class="contact__detail-body">
+                                <span class="contact__detail-label">Response time</span>
+                                <span class="contact__detail-value">Within 24 hours</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="form__group">
-                    <label class="form__label" for="email">Email</label>
-                    <input class="form__input" type="email" name="email" id="email" placeholder="Enter Your Email" required>
-                </div>
+                <!-- Contact Form -->
+                <form class="contact__form" id="contactForm" novalidate>
+                    <div class="form__group">
+                        <label class="form__label" for="name">Name</label>
+                        <input class="form__input" type="text" name="name" id="name" placeholder="Your name" required>
+                    </div>
+                    <div class="form__group">
+                        <label class="form__label" for="email">Email</label>
+                        <input class="form__input" type="email" name="email" id="email" placeholder="your@email.com" required>
+                    </div>
+                    <div class="form__group">
+                        <label class="form__label" for="phone">Phone</label>
+                        <input class="form__input" type="tel" name="phone" id="phone" placeholder="+1 (555) 000-0000" required>
+                    </div>
+                    <div class="form__group">
+                        <label class="form__label" for="message">Message</label>
+                        <textarea class="form__textarea" name="message" id="message" placeholder="Tell me about your project..." required></textarea>
+                    </div>
+                    <button class="btn btn--primary btn--full" type="submit">
+                        <i class="bi bi-send"></i>
+                        Send Message
+                    </button>
+                </form>
 
-                <div class="form__group">
-                    <label class="form__label" for="phone">Phone</label>
-                    <input class="form__input" type="tel" name="phone" id="phone" placeholder="Enter Your Phone Number" required>
-                </div>
-
-                <div class="form__group">
-                    <label class="form__label" for="message">Message</label>
-                    <textarea class="form__textarea" name="message" id="message" placeholder="Enter Your Message" required></textarea>
-                </div>
-
-                <button class="btn btn--primary btn--full" type="submit">
-                    Submit
-                </button>
-            </form>
+            </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- ===== FOOTER ===== -->
     <footer class="footer">
         <div class="container">
             <div class="footer__content">
                 <div class="footer__info">
                     <h2 class="footer__title">Jose Vargas</h2>
                     <p class="footer__description">
-                        A Frontend focused Web Developer building the Frontend of Websites and Web Applications that leads to the success of the overall product
+                        A Backend Developer focused on building robust server-side systems, REST APIs and business applications with Node.js, TypeScript and hexagonal architecture.
                     </p>
                 </div>
 
                 <div class="footer__social">
-                    <h3 class="footer__social-title">Social</h3>
+                    <h3 class="footer__social-title">Follow me</h3>
                     <div class="social__links">
-                        <a href="https://github.com/JoseR-Vargas" target="_blank" class="social__link" title="GitHub">
+                        <a href="https://github.com/JoseR-Vargas" target="_blank" class="social__link" title="GitHub" aria-label="GitHub">
                             <i class="bi bi-github"></i>
                         </a>
-                        <a href="https://www.linkedin.com/in/jose-vargas-development-full-stack2025/" target="_blank" class="social__link" title="LinkedIn">
+                        <a href="https://www.linkedin.com/in/jose-vargas-development-full-stack2025/" target="_blank" class="social__link" title="LinkedIn" aria-label="LinkedIn">
                             <i class="bi bi-linkedin"></i>
                         </a>
-                        <a href="https://www.tiktok.com/@developer.uy?_t=8nwX2kRuesY&_r=1" target="_blank" class="social__link" title="TikTok">
+                        <a href="https://www.tiktok.com/@developer.uy?_t=8nwX2kRuesY&_r=1" target="_blank" class="social__link" title="TikTok" aria-label="TikTok">
                             <i class="bi bi-tiktok"></i>
                         </a>
-                        <a href="https://www.instagram.com/developer_uy?igsh=NDJ5eXd1bHprcjZr" target="_blank" class="social__link" title="Instagram">
+                        <a href="https://www.instagram.com/developer_uy?igsh=NDJ5eXd1bHprcjZr" target="_blank" class="social__link" title="Instagram" aria-label="Instagram">
                             <i class="bi bi-instagram"></i>
                         </a>
                     </div>
@@ -331,7 +440,7 @@
             </div>
 
             <div class="footer__bottom">
-                <p>© 2024 Jose Vargas. All rights reserved.</p>
+                <p>© 2024 Jose Vargas — All rights reserved</p>
             </div>
         </div>
     </footer>
@@ -340,5 +449,6 @@
     <script src="js/api-config.js"></script>
     <script>window.ApiConfig = ApiConfig;</script>
     <script src="js/main.js"></script>
+
 </body>
 </html>

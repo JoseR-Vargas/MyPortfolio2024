@@ -215,33 +215,76 @@ class FormManager {
     }
 }
 
+// ===== TYPEWRITER EFFECT =====
+class TypewriterEffect {
+    constructor(element, texts, typeSpeed = 90, deleteSpeed = 55, pauseTime = 2200) {
+        this.element = element;
+        this.texts = texts;
+        this.typeSpeed = typeSpeed;
+        this.deleteSpeed = deleteSpeed;
+        this.pauseTime = pauseTime;
+        this.textIndex = 0;
+        this.charIndex = 0;
+        this.isDeleting = false;
+        this.type();
+    }
+
+    type() {
+        const currentText = this.texts[this.textIndex];
+
+        if (this.isDeleting) {
+            this.element.textContent = currentText.substring(0, this.charIndex - 1);
+            this.charIndex--;
+        } else {
+            this.element.textContent = currentText.substring(0, this.charIndex + 1);
+            this.charIndex++;
+        }
+
+        let delay = this.isDeleting ? this.deleteSpeed : this.typeSpeed;
+
+        if (!this.isDeleting && this.charIndex === currentText.length) {
+            delay = this.pauseTime;
+            this.isDeleting = true;
+        } else if (this.isDeleting && this.charIndex === 0) {
+            this.isDeleting = false;
+            this.textIndex = (this.textIndex + 1) % this.texts.length;
+            delay = 400;
+        }
+
+        setTimeout(() => this.type(), delay);
+    }
+}
+
 // ===== SCROLL ANIMATIONS =====
 class ScrollAnimations {
     constructor() {
         this.init();
     }
-    
+
     init() {
         if ('IntersectionObserver' in window) {
             this.setupObserver();
         }
     }
-    
+
     setupObserver() {
         const options = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
+            threshold: 0.08,
+            rootMargin: '0px 0px -40px 0px'
         };
-        
+
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     DOMUtils.addClass(entry.target, 'animate-in');
+                    observer.unobserve(entry.target);
                 }
             });
         }, options);
-        
-        const elementsToAnimate = DOMUtils.$$('.hero, .section__title, .project__card, .skill__item');
+
+        const elementsToAnimate = DOMUtils.$$(
+            '.section__title, .section__tag, .section__subtitle, .project__card, .skill__item, .about__info, .about__skills, .contact__info, .contact__form'
+        );
         elementsToAnimate.forEach(el => observer.observe(el));
     }
 }
@@ -269,7 +312,17 @@ class PortfolioApp {
                 new FormManager(),
                 new ScrollAnimations()
             );
-            
+
+            // Typewriter effect on hero subtitle
+            const typedEl = DOMUtils.$('#typed-text');
+            if (typedEl) {
+                new TypewriterEffect(typedEl, [
+                    'Backend Engineer',
+                    'API Developer',
+                    'Node.js Developer'
+                ]);
+            }
+
             console.log('Portfolio app initialized successfully');
         } catch (error) {
             console.error('Error initializing portfolio app:', error);
