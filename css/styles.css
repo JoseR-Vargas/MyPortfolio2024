@@ -1384,6 +1384,10 @@ body {
     .project__card:nth-child(4).animate-in {
         transition-delay: 0.3s;
     }
+
+    .project__card:nth-child(5).animate-in {
+        transition-delay: 0.4s;
+    }
 }
 
 @keyframes fadeInUp {
