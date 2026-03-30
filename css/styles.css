@@ -903,6 +903,128 @@ body {
     left: 100%;
 }
 
+/* ===== CERTIFICATIONS ===== */
+.certifications {
+    margin-top: var(--space-3xl);
+}
+
+.certifications__title {
+    font-size: var(--fs-2xl);
+    font-weight: var(--fw-bold);
+    color: var(--white);
+    margin-bottom: var(--space-xl);
+    letter-spacing: -0.01em;
+}
+
+.certifications__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-sm);
+}
+
+@media (min-width: 640px) {
+    .certifications__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 968px) {
+    .certifications__grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.cert__card {
+    background: var(--card-bg);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: var(--border-radius-lg);
+    padding: var(--space-lg);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    transition: border-color var(--transition-base), transform var(--transition-base);
+}
+
+.cert__card:hover {
+    border-color: rgba(0, 217, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+.cert__icon-wrap {
+    width: 2.5rem;
+    height: 2.5rem;
+    background: linear-gradient(135deg, rgba(0, 217, 255, 0.12), rgba(0, 102, 255, 0.12));
+    border-radius: var(--border-radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cert__icon {
+    font-size: 1.1rem;
+    color: var(--primary-color);
+}
+
+.cert__info {
+    flex: 1;
+}
+
+.cert__name {
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-semibold);
+    color: var(--white);
+    margin-bottom: 0.25rem;
+    line-height: 1.35;
+}
+
+.cert__institution {
+    font-size: var(--fs-xs);
+    color: rgba(255, 255, 255, 0.4);
+    font-family: var(--font-mono);
+}
+
+.cert__actions {
+    display: flex;
+    gap: var(--space-xs);
+    margin-top: var(--space-xs);
+}
+
+.cert__btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0.35rem 0.75rem;
+    border-radius: var(--border-radius-md);
+    font-size: var(--fs-xs);
+    font-weight: var(--fw-semibold);
+    text-decoration: none;
+    transition: all var(--transition-base);
+    letter-spacing: 0.03em;
+}
+
+.cert__btn--view {
+    background: rgba(0, 217, 255, 0.1);
+    color: var(--primary-color);
+    border: 1px solid rgba(0, 217, 255, 0.2);
+}
+
+.cert__btn--view:hover {
+    background: rgba(0, 217, 255, 0.2);
+    border-color: rgba(0, 217, 255, 0.5);
+}
+
+.cert__btn--dl {
+    background: rgba(255, 255, 255, 0.05);
+    color: rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.cert__btn--dl:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--white);
+    border-color: rgba(255, 255, 255, 0.25);
+}
+
 /* ===== PROJECTS SECTION ===== */
 .projects {
     padding: var(--space-4xl) 0;
