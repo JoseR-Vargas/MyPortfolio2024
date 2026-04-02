@@ -229,7 +229,12 @@ class TypewriterEffect {
         this.type();
     }
 
+    cancel() {
+        this.cancelled = true;
+    }
+
     type() {
+        if (this.cancelled) return;
         const currentText = this.texts[this.textIndex];
 
         if (this.isDeleting) {
@@ -306,7 +311,10 @@ class PortfolioApp {
     
     initializeManagers() {
         try {
+            const langManager = new LanguageManager();
+
             this.managers.push(
+                langManager,
                 new NavigationManager(),
                 new SmoothScrollManager(),
                 new FormManager(),
@@ -315,13 +323,19 @@ class PortfolioApp {
 
             // Typewriter effect on hero subtitle
             const typedEl = DOMUtils.$('#typed-text');
+            let typewriter;
             if (typedEl) {
-                new TypewriterEffect(typedEl, [
-                    'Backend Engineer',
-                    'API Developer',
-                    'Node.js Developer'
-                ]);
+                typewriter = new TypewriterEffect(typedEl, langManager.getTypewriterTexts());
             }
+
+            // Restart typewriter with new language strings on toggle
+            DOMUtils.on(document, 'langchange', () => {
+                if (typewriter) typewriter.cancel();
+                if (typedEl) {
+                    typedEl.textContent = '';
+                    typewriter = new TypewriterEffect(typedEl, langManager.getTypewriterTexts());
+                }
+            });
 
             console.log('Portfolio app initialized successfully');
         } catch (error) {

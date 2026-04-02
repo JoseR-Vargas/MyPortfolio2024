@@ -28,26 +28,32 @@
                 <span class="header__name">Jose Vargas</span>
             </div>
 
-            <button id="abrir" class="header__toggle" aria-label="Open menu">
+            <button id="langToggle" class="lang-toggle" aria-label="Switch language" title="Cambiar idioma / Switch language">
+                <span class="lang-toggle__label lang-toggle__label--active" data-lang="en">EN</span>
+                <span class="lang-toggle__separator" aria-hidden="true">/</span>
+                <span class="lang-toggle__label" data-lang="es">ES</span>
+            </button>
+
+            <button id="abrir" class="header__toggle" aria-label="Open menu" data-i18n-aria="nav.openMenu">
                 <i class="bi bi-list"></i>
             </button>
 
             <nav class="nav" id="nav" aria-label="Main navigation">
-                <button class="nav__close" id="cerrar" aria-label="Close menu">
+                <button class="nav__close" id="cerrar" aria-label="Close menu" data-i18n-aria="nav.closeMenu">
                     <i class="bi bi-x"></i>
                 </button>
                 <ul class="nav__list">
                     <li class="nav__item">
-                        <a href="#home" class="nav__link">Home</a>
+                        <a href="#home" class="nav__link" data-i18n="nav.home">Home</a>
                     </li>
                     <li class="nav__item">
-                        <a href="#about" class="nav__link">About</a>
+                        <a href="#about" class="nav__link" data-i18n="nav.about">About</a>
                     </li>
                     <li class="nav__item">
-                        <a href="#projects" class="nav__link">Projects</a>
+                        <a href="#projects" class="nav__link" data-i18n="nav.projects">Projects</a>
                     </li>
                     <li class="nav__item">
-                        <a href="#contact" class="nav__link">Contact</a>
+                        <a href="#contact" class="nav__link" data-i18n="nav.contact">Contact</a>
                     </li>
                 </ul>
             </nav>
@@ -75,7 +81,7 @@
                     <span class="hero__badge-text">Available for hire</span>
                 </div> -->
 
-                <span class="hero__greeting">// Hey, I'm</span>
+                <span class="hero__greeting" data-i18n="hero.greeting">// Hey, I'm</span>
                 <h1 class="hero__name">Jose Vargas</h1>
 
                 <!-- Typewriter subtitle -->
@@ -83,18 +89,18 @@
                     <span id="typed-text"></span><span class="hero__cursor" aria-hidden="true">|</span>
                 </p>
 
-                <p class="hero__description">
+                <p class="hero__description" data-i18n-html="hero.description">
                     Backend Developer focused on building scalable services with <strong>Node.js</strong>, <strong>TypeScript</strong> and <strong>hexagonal architecture</strong> backed by SQL databases.
                 </p>
 
                 <div class="hero__cta">
                     <a href="#projects" class="btn btn--primary">
                         <i class="bi bi-grid-3x3-gap"></i>
-                        View My Work
+                        <span data-i18n="hero.cta.work">View My Work</span>
                     </a>
                     <a href="#contact" class="btn btn--secondary">
                         <i class="bi bi-send"></i>
-                        Get In Touch
+                        <span data-i18n="hero.cta.contact">Get In Touch</span>
                     </a>
                 </div>
             </div>
@@ -111,7 +117,7 @@
         <!-- Scroll indicator -->
         <div class="hero__scroll">
             <a href="#about" class="hero__scroll-link" aria-label="Scroll to About section">
-                <span>Scroll</span>
+                <span data-i18n="hero.scroll">Scroll</span>
                 <i class="bi bi-chevron-down"></i>
             </a>
         </div>
@@ -121,9 +127,9 @@
     <section id="about" class="about">
         <div class="container">
             <div class="section__header">
-                <span class="section__tag">Who I am</span>
-                <h2 class="section__title">About Me</h2>
-                <p class="section__subtitle">
+                <span class="section__tag" data-i18n="about.tag">Who I am</span>
+                <h2 class="section__title" data-i18n="about.title">About Me</h2>
+                <p class="section__subtitle" data-i18n="about.subtitle">
                     Here you will find more information about me, what I do, and my current skills mostly in terms of programming and technology
                 </p>
             </div>
@@ -131,23 +137,27 @@
             <div class="about__content">
                 <!-- Bio -->
                 <div class="about__info">
-                    <h3 class="about__info-title">Get to know me!</h3>
+                    <h3 class="about__info-title" data-i18n="about.bioTitle">Get to know me!</h3>
                     <div class="about__text">
-                        <p>
+                        <p data-i18n-html="about.bio1">
                             I'm a <strong>Backend Developer</strong> focused on designing and building robust server-side systems, REST APIs and business applications. I work primarily with <strong>NestJS</strong>, <strong>Node.js</strong> and <strong>TypeScript</strong>, with a strong emphasis on clean architecture, maintainability and long-term scalability. Check out my work in the <strong>Projects</strong> section.
                         </p>
-                        <p>
+                        <!-- <p data-i18n-html="about.bio2">
                             My backend experience includes migrating a legacy <strong>PHP</strong> application to <strong>Node.js</strong> and <strong>TypeScript</strong> with <strong>hexagonal architecture</strong> and <strong>Oracle Database 10</strong> for a power utility platform in Mendoza, Argentina. I also built a vacation management portal for a mining company in Peru and a product bidding portal, both backed by <strong>PostgreSQL</strong> and designed around clear domain boundaries for maintainable growth.
-                        </p>
+                        </p> -->
                         <!-- <p>
                             I'm actively looking for <strong>Backend</strong> or <strong>Node.js</strong> roles where I can contribute to meaningful products, grow technically and work with a team that values good engineering. Don't hesitate to <strong>reach out</strong> if that sounds like a fit.
                         </p> -->
                     </div>
+                    <a href="cv/backend_cv.pdf" class="btn btn--primary about__cv-btn" download>
+                        <i class="bi bi-download"></i>
+                        <span data-i18n="about.downloadCV">Download CV</span>
+                    </a>
                 </div>
 
                 <!-- Skills -->
                 <div class="about__skills">
-                    <h3 class="about__skills-title">My Skills</h3>
+                    <h3 class="about__skills-title" data-i18n="about.skillsTitle">My Skills</h3>
                     <div class="skills__grid">
                         <div class="skill__item">
                             <i class="bi bi-server skill__icon"></i>
@@ -207,7 +217,7 @@
 
             <!-- Certifications -->
             <div class="certifications">
-                <h3 class="certifications__title">Certifications</h3>
+                <h3 class="certifications__title" data-i18n="about.certsTitle">Certifications</h3>
                 <div class="certifications__grid">
 
                     <div class="cert__card">
@@ -220,7 +230,7 @@
                         </div>
                         <div class="cert__actions">
                             <a href="tittles/back-I.jpeg" target="_blank" class="cert__btn cert__btn--view" aria-label="View certificate">
-                                <i class="bi bi-eye"></i> View
+                                <i class="bi bi-eye"></i> <span data-i18n="cert.view">View</span>
                             </a>
                             <a href="tittles/back-I.jpeg" download class="cert__btn cert__btn--dl" aria-label="Download certificate">
                                 <i class="bi bi-download"></i>
@@ -238,7 +248,7 @@
                         </div>
                         <div class="cert__actions">
                             <a href="tittles/back-II.jpeg" target="_blank" class="cert__btn cert__btn--view" aria-label="View certificate">
-                                <i class="bi bi-eye"></i> View
+                                <i class="bi bi-eye"></i> <span data-i18n="cert.view">View</span>
                             </a>
                             <a href="tittles/back-II.jpeg" download class="cert__btn cert__btn--dl" aria-label="Download certificate">
                                 <i class="bi bi-download"></i>
@@ -256,7 +266,7 @@
                         </div>
                         <div class="cert__actions">
                             <a href="tittles/back-III.jpeg" target="_blank" class="cert__btn cert__btn--view" aria-label="View certificate">
-                                <i class="bi bi-eye"></i> View
+                                <i class="bi bi-eye"></i> <span data-i18n="cert.view">View</span>
                             </a>
                             <a href="tittles/back-III.jpeg" download class="cert__btn cert__btn--dl" aria-label="Download certificate">
                                 <i class="bi bi-download"></i>
@@ -274,7 +284,7 @@
                         </div>
                         <div class="cert__actions">
                             <a href="tittles/front-react.jpeg" target="_blank" class="cert__btn cert__btn--view" aria-label="View certificate">
-                                <i class="bi bi-eye"></i> View
+                                <i class="bi bi-eye"></i> <span data-i18n="cert.view">View</span>
                             </a>
                             <a href="tittles/front-react.jpeg" download class="cert__btn cert__btn--dl" aria-label="Download certificate">
                                 <i class="bi bi-download"></i>
@@ -292,7 +302,7 @@
                         </div>
                         <div class="cert__actions">
                             <a href="tittles/nest-js.pdf" target="_blank" class="cert__btn cert__btn--view" aria-label="View certificate">
-                                <i class="bi bi-eye"></i> View
+                                <i class="bi bi-eye"></i> <span data-i18n="cert.view">View</span>
                             </a>
                             <a href="tittles/nest-js.pdf" download class="cert__btn cert__btn--dl" aria-label="Download certificate">
                                 <i class="bi bi-download"></i>
@@ -310,7 +320,7 @@
                         </div>
                         <div class="cert__actions">
                             <a href="tittles/typescript.pdf" target="_blank" class="cert__btn cert__btn--view" aria-label="View certificate">
-                                <i class="bi bi-eye"></i> View
+                                <i class="bi bi-eye"></i> <span data-i18n="cert.view">View</span>
                             </a>
                             <a href="tittles/typescript.pdf" download class="cert__btn cert__btn--dl" aria-label="Download certificate">
                                 <i class="bi bi-download"></i>
@@ -328,7 +338,7 @@
                         </div>
                         <div class="cert__actions">
                             <a href="tittles/solid-clean-code.pdf" target="_blank" class="cert__btn cert__btn--view" aria-label="View certificate">
-                                <i class="bi bi-eye"></i> View
+                                <i class="bi bi-eye"></i> <span data-i18n="cert.view">View</span>
                             </a>
                             <a href="tittles/solid-clean-code.pdf" download class="cert__btn cert__btn--dl" aria-label="Download certificate">
                                 <i class="bi bi-download"></i>
@@ -346,9 +356,9 @@
     <section id="projects" class="projects">
         <div class="container">
             <div class="section__header">
-                <span class="section__tag">My work</span>
-                <h2 class="section__title">Projects</h2>
-                <p class="section__subtitle">
+                <span class="section__tag" data-i18n="projects.tag">My work</span>
+                <h2 class="section__title" data-i18n="projects.title">Projects</h2>
+                <p class="section__subtitle" data-i18n="projects.subtitle">
                     Here you will find some of the personal and client projects that I created with each project containing its own case study
                 </p>
             </div>
@@ -369,7 +379,7 @@
                     </div>
                     <div class="project__content">
                         <h3 class="project__title">Paquetería24</h3>
-                        <p class="project__description">
+                        <p class="project__description" data-i18n="projects.p24.desc">
                             Lead-generation website for a courier company in Montevideo, Uruguay. It helps capture quote requests from businesses and individuals, while an admin panel lets the team review and manage customer submissions from one place.
                         </p>
                         <div class="project__tech">
@@ -395,7 +405,7 @@
                     </div>
                     <div class="project__content">
                         <h3 class="project__title">TecniServi</h3>
-                        <p class="project__description">
+                        <p class="project__description" data-i18n="projects.tecni.desc">
                             Comprehensive website for a technical service company specializing in electronic device repairs. Features service listings, contact forms, location maps, and social media integration.
                         </p>
                         <div class="project__tech">
@@ -421,7 +431,7 @@
                     </div>
                     <div class="project__content">
                         <h3 class="project__title">Booking App — Barbería</h3>
-                        <p class="project__description">
+                        <p class="project__description" data-i18n="projects.booking.desc">
                             Appointment booking app built for a barbershop in Montevideo. Customers can choose services, date, time and professional, while the admin receives real-time notifications and can manage booking cancellations.
                         </p>
                         <div class="project__tech">
@@ -447,7 +457,7 @@
                     </div>
                     <div class="project__content">
                         <h3 class="project__title">Avila Grill Miami</h3>
-                        <p class="project__description">
+                        <p class="project__description" data-i18n="projects.avila.desc">
                             Client website for a Miami-based food truck with brand storytelling, a category-based digital menu, business hours, contact details, social media links, and a location section to help customers find the truck quickly.
                         </p>
                         <div class="project__tech">
@@ -473,7 +483,7 @@
                     </div>
                     <div class="project__content">
                         <h3 class="project__title">LisCake</h3>
-                        <p class="project__description">
+                        <p class="project__description" data-i18n="projects.liscake.desc">
                             Modern, responsive website for a local bakery specializing in artisanal cakes and muffins. Features an ordering system, customer testimonials, and WhatsApp integration.
                         </p>
                         <div class="project__tech">
@@ -499,7 +509,7 @@
                     </div>
                     <div class="project__content">
                         <h3 class="project__title">Nice Surprise</h3>
-                        <p class="project__description">
+                        <p class="project__description" data-i18n="projects.surprise.desc">
                             E-commerce website for a special occasion arrangement business where customers can browse products, add items to the cart, and complete purchases using Mercado Pago or bank transfer.
                         </p>
                         <div class="project__tech">
@@ -525,7 +535,7 @@
                     </div>
                     <div class="project__content">
                         <h3 class="project__title">Hostal Mayelewoo</h3>
-                        <p class="project__description">
+                        <p class="project__description" data-i18n="projects.hostal.desc">
                             Rental portal for a Córdoba-based lodging business where users can explore room and apartment information, while the admin manages tenant requests, electricity meter submissions, payment vouchers, and invoice workflows.
                         </p>
                         <div class="project__tech">
@@ -545,9 +555,9 @@
     <section id="contact" class="contact">
         <div class="container">
             <div class="section__header">
-                <span class="section__tag">Get in touch</span>
-                <h2 class="section__title">Contact</h2>
-                <p class="section__subtitle">
+                <span class="section__tag" data-i18n="contact.tag">Get in touch</span>
+                <h2 class="section__title" data-i18n="contact.title">Contact</h2>
+                <p class="section__subtitle" data-i18n="contact.subtitle">
                     Feel free to reach out by submitting the form below and I will get back to you as soon as possible
                 </p>
             </div>
@@ -556,10 +566,10 @@
 
                 <!-- Contact Info -->
                 <div class="contact__info">
-                    <h3 class="contact__info-title">
+                    <h3 class="contact__info-title" data-i18n-html="contact.infoTitle">
                         Let's build something <span class="text-gradient">amazing</span>
                     </h3>
-                    <p class="contact__info-text">
+                    <p class="contact__info-text" data-i18n="contact.infoText">
                         I'm always open to discussing new projects, creative ideas or opportunities to be part of your vision. Don't hesitate to reach out.
                     </p>
                     <div class="contact__details">
@@ -568,7 +578,7 @@
                                 <i class="bi bi-geo-alt"></i>
                             </div>
                             <div class="contact__detail-body">
-                                <span class="contact__detail-label">Location</span>
+                                <span class="contact__detail-label" data-i18n="contact.label.location">Location</span>
                                 <span class="contact__detail-value">Uruguay, South America</span>
                             </div>
                         </div>
@@ -577,8 +587,8 @@
                                 <i class="bi bi-clock"></i>
                             </div>
                             <div class="contact__detail-body">
-                                <span class="contact__detail-label">Availability</span>
-                                <span class="contact__detail-value">Mon – Fri, 9am – 6pm UYT</span>
+                                <span class="contact__detail-label" data-i18n="contact.label.availability">Availability</span>
+                                <span class="contact__detail-value" data-i18n="contact.val.availability">Mon – Fri, 9am – 6pm UYT</span>
                             </div>
                         </div>
                         <div class="contact__detail-item">
@@ -586,8 +596,8 @@
                                 <i class="bi bi-reply-all"></i>
                             </div>
                             <div class="contact__detail-body">
-                                <span class="contact__detail-label">Response time</span>
-                                <span class="contact__detail-value">Within 24 hours</span>
+                                <span class="contact__detail-label" data-i18n="contact.label.response">Response time</span>
+                                <span class="contact__detail-value" data-i18n="contact.val.response">Within 24 hours</span>
                             </div>
                         </div>
                     </div>
@@ -596,24 +606,24 @@
                 <!-- Contact Form -->
                 <form class="contact__form" id="contactForm" novalidate>
                     <div class="form__group">
-                        <label class="form__label" for="name">Name</label>
-                        <input class="form__input" type="text" name="name" id="name" placeholder="Your name" required>
+                        <label class="form__label" for="name" data-i18n="contact.form.name">Name</label>
+                        <input class="form__input" type="text" name="name" id="name" placeholder="Your name" data-i18n-placeholder="contact.form.namePh" required>
                     </div>
                     <div class="form__group">
-                        <label class="form__label" for="email">Email</label>
+                        <label class="form__label" for="email" data-i18n="contact.form.email">Email</label>
                         <input class="form__input" type="email" name="email" id="email" placeholder="your@email.com" required>
                     </div>
                     <div class="form__group">
-                        <label class="form__label" for="phone">Phone</label>
+                        <label class="form__label" for="phone" data-i18n="contact.form.phone">Phone</label>
                         <input class="form__input" type="tel" name="phone" id="phone" placeholder="+1 (555) 000-0000" required>
                     </div>
                     <div class="form__group">
-                        <label class="form__label" for="message">Message</label>
-                        <textarea class="form__textarea" name="message" id="message" placeholder="Tell me about your project..." required></textarea>
+                        <label class="form__label" for="message" data-i18n="contact.form.message">Message</label>
+                        <textarea class="form__textarea" name="message" id="message" placeholder="Tell me about your project..." data-i18n-placeholder="contact.form.messagePh" required></textarea>
                     </div>
                     <button class="btn btn--primary btn--full" type="submit">
                         <i class="bi bi-send"></i>
-                        Send Message
+                        <span data-i18n="contact.form.submit">Send Message</span>
                     </button>
                 </form>
 
@@ -627,13 +637,13 @@
             <div class="footer__content">
                 <div class="footer__info">
                     <h2 class="footer__title">Jose Vargas</h2>
-                    <p class="footer__description">
+                    <p class="footer__description" data-i18n="footer.desc">
                         A Backend Developer focused on building robust server-side systems, REST APIs and business applications with Node.js, TypeScript and hexagonal architecture.
                     </p>
                 </div>
 
                 <div class="footer__social">
-                    <h3 class="footer__social-title">Follow me</h3>
+                    <h3 class="footer__social-title" data-i18n="footer.followMe">Follow me</h3>
                     <div class="social__links">
                         <a href="https://github.com/JoseR-Vargas" target="_blank" class="social__link" title="GitHub" aria-label="GitHub">
                             <i class="bi bi-github"></i>
@@ -652,7 +662,7 @@
             </div>
 
             <div class="footer__bottom">
-                <p>© 2024 Jose Vargas — All rights reserved</p>
+                <p data-i18n="footer.rights">© 2024 Jose Vargas — All rights reserved</p>
             </div>
         </div>
     </footer>
@@ -660,6 +670,7 @@
     <!-- Scripts -->
     <script src="js/api-config.js"></script>
     <script>window.ApiConfig = ApiConfig;</script>
+    <script src="js/i18n.js"></script>
     <script src="js/main.js"></script>
 
 </body>

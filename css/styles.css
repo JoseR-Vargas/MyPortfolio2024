@@ -319,6 +319,50 @@ body {
     border-color: rgba(0, 217, 255, 0.4);
 }
 
+/* ===== LANGUAGE TOGGLE ===== */
+.lang-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    height: 40px;
+    padding: 0 12px;
+    background: rgba(0, 217, 255, 0.05);
+    border: 1px solid rgba(0, 217, 255, 0.15);
+    border-radius: var(--border-radius);
+    color: rgba(255, 255, 255, 0.55);
+    font-family: var(--font-mono);
+    font-size: var(--fs-xs);
+    font-weight: var(--fw-semibold);
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    flex-shrink: 0;
+}
+
+.lang-toggle:hover {
+    background: rgba(0, 217, 255, 0.1);
+    border-color: rgba(0, 217, 255, 0.4);
+}
+
+.lang-toggle:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 3px;
+}
+
+.lang-toggle__label {
+    color: rgba(255, 255, 255, 0.35);
+    transition: color var(--transition-fast);
+}
+
+.lang-toggle__label--active {
+    color: var(--primary-color);
+}
+
+.lang-toggle__separator {
+    color: rgba(255, 255, 255, 0.2);
+    font-size: 0.65rem;
+}
+
 /* ===== NAVIGATION ===== */
 .nav {
     position: fixed;
@@ -830,6 +874,13 @@ body {
 .about__text strong {
     color: rgba(255, 255, 255, 0.9);
     font-weight: var(--fw-semibold);
+}
+
+.about__cv-btn {
+    margin-top: var(--space-xl);
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
 }
 
 /* ===== SKILLS ===== */
