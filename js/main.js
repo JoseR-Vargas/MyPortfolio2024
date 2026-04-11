@@ -168,21 +168,11 @@ class FormManager {
 
             const result = await response.json();
 
-            if (window.ContactFormIntegration) {
-                window.ContactFormIntegration.addMessage(data);
-            }
-
             this.showMessage('Message sent successfully!', 'success');
             this.form.reset();
         } catch (error) {
             console.error('Error sending message:', error);
-
-            if (window.ContactFormIntegration) {
-                window.ContactFormIntegration.addMessage(data);
-                this.showMessage('Message saved locally. Please check your connection.', 'warning');
-            } else {
-                this.showMessage('Error sending message. Please try again.', 'error');
-            }
+            this.showMessage('Error sending message. Please try again.', 'error');
         }
     }
 

@@ -621,36 +621,6 @@ class ContactFormIntegration {
     }
 }
 
-// ===== DEMO DATA FOR TESTING =====
-class DemoData {
-    static init() {
-        const existingMessages = StorageService.getMessages();
-        
-        // Only add demo data if no messages exist
-        if (existingMessages.length === 0) {
-            const demoMessages = [
-                {
-                    name: 'John Doe',
-                    email: 'john.doe@example.com',
-                    message: 'Hi Jose! I saw your portfolio and I\'m really impressed with your work. Would love to discuss a potential project collaboration. Could we schedule a call this week?'
-                },
-                {
-                    name: 'Sarah Smith',
-                    email: 'sarah.smith@techcorp.com',
-                    message: 'Hello, we are looking for a Full Stack Developer for our startup. Your skills in React and NestJS are exactly what we need. Are you available for freelance work?'
-                },
-                {
-                    name: 'Miguel Rodriguez',
-                    email: 'miguel.r@design.agency',
-                    message: 'Hola Jose! Me encanta tu trabajo en los proyectos de Avila Grill y LisCake. Tenemos algunos clientes que necesitan sitios web similares. ¿Podrías ayudarnos?'
-                }
-            ];
-            
-            demoMessages.forEach(msg => StorageService.addMessage(msg));
-        }
-    }
-}
-
 // ===== INITIALIZE DASHBOARD =====
 class DashboardApp {
     constructor() {
@@ -667,9 +637,6 @@ class DashboardApp {
     
     initializeApp() {
         try {
-            // Initialize demo data
-            DemoData.init();
-            
             // Initialize contact form integration
             ContactFormIntegration.init();
             

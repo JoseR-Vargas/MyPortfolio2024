@@ -11,7 +11,7 @@ class LanguageManager {
             'hero.typewriter': ['Backend Engineer', 'API Developer', 'Node.js Developer'],
             'hero.greeting': "Hello, I'm",
             'hero.description': 'Specialized in <strong>Node.js</strong> · <strong>NestJS</strong> · <strong>TypeScript</strong><br>Hexagonal Architecture · DDD · Clean Code',
-            'hero.cta.contact': 'Hire Me',
+            'hero.cta.contact': 'Contact me',
             'hero.cta.work': 'View My Work',
             'nav.home': 'Home',
             'nav.about': 'About',
