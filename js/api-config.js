@@ -88,24 +88,4 @@ class ApiService {
         }
     }
     
-    static async getStats() {
-        try {
-            const response = await fetch(`${this.BASE_URL}/contacts/stats`);
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
-            return await response.json();
-        } catch (error) {
-            console.error('Error fetching stats:', error);
-            // Fallback calculation from localStorage
-            const messages = StorageService.getMessages();
-            const statsManager = new StatsManager(messages);
-            return {
-                total: statsManager.getTotalMessages(),
-                today: statsManager.getTodayMessages(),
-                recent: statsManager.getRecentMessages(),
-                unread: messages.filter(m => m.status === 'unread').length
-            };
-        }
-    }
 }
